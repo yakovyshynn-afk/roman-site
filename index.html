@@ -132,6 +132,15 @@ h3{font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;line-h
 .grad-t{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .lede{margin-top:26px}
 .hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+/* тихий наскрізний лінк «швидкого шляху» до заявки — hero + верхні 3 секції */
+.qp-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink2);
+  text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line2);transition:color .2s}
+.qp-link:hover{color:var(--ink)}
+.qp-link .arw{transition:transform .3s var(--ease)}
+.qp-link:hover .arw{transform:translateX(4px)}
+.qp-link-row{margin-top:18px}
+.dark .qp-link{color:rgba(245,245,247,.55)}
+.dark .qp-link:hover{color:#fff}
 .hero-note{font-size:13.5px;color:var(--ink3);margin-top:16px;display:flex;align-items:center;gap:7px}
 .hero-note b{width:7px;height:7px;border-radius:50%;background:var(--good);display:inline-block;flex-shrink:0;font-size:0;animation:pls 2.4s infinite}
 .hero-fig{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--bg3);
@@ -222,10 +231,11 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .loss-yr b{color:#fff;font-weight:600}
 .loss-note{font-size:13.5px;color:rgba(245,245,247,.5);margin-top:18px;line-height:1.65}
 .loss-foot{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--ink3);line-height:1.6}
+.loss-hint{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink3);line-height:1.6}
 
 /* ═══ МОДУЛЬ 3: ДО/ПІСЛЯ ═══ */
 .ba{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);
-  aspect-ratio:16/10;background:var(--surface);user-select:none;cursor:ew-resize;box-shadow:0 18px 50px rgba(0,0,0,.09)}
+  aspect-ratio:16/9;background:var(--surface);user-select:none;cursor:ew-resize;box-shadow:0 18px 50px rgba(0,0,0,.09)}
 @media(max-width:700px){.ba{aspect-ratio:4/5}}
 .ba-pane{position:absolute;inset:0;overflow:hidden}
 .ba-pane.after{clip-path:inset(0 0 0 50%)}
@@ -234,6 +244,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .ba-tag.l{left:14px;background:rgba(180,70,60,.9)}
 .ba-tag.r{right:14px;background:rgba(46,125,91,.92)}
 .ba-h{position:absolute;top:0;bottom:0;width:2px;background:var(--surface);box-shadow:0 0 0 1px rgba(0,0,0,.14);z-index:6;left:50%;pointer-events:none}
+#baH{pointer-events:auto}
 .ba-k{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;
   background:var(--surface);box-shadow:0 4px 16px rgba(0,0,0,.22);display:grid;place-items:center;z-index:7;pointer-events:none}
 .ba-k::before{content:"⟺";font-size:16px;color:var(--ink)}
@@ -254,6 +265,12 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
   display:grid;place-items:center;font-size:16px;font-style:normal;color:var(--ink3)}
 .brw-empty b{display:block;font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.02em;
   font-size:clamp(13px,3vw,19px);color:var(--ink2);max-width:min(200px,32%);line-height:1.25;white-space:normal}
+.ba-toggle{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:18px}
+.ba-toggle-lb{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.ba-btn{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line2);border-radius:100px;padding:8px 18px;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.ba-btn:hover{border-color:var(--ink)}
+.ba-btn.on{background:var(--acc);color:#fff;border-color:var(--acc)}
 .ba-legend{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
 @media(min-width:760px){.ba-legend{grid-template-columns:1fr 1fr;gap:26px}}
 .ba-lg{padding:20px 22px;border-radius:14px;background:var(--bg2)}
@@ -384,7 +401,7 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 /* скріншот живого сайту в картці кейсу */
 .case-shot{position:relative;border-radius:14px;border:1px solid var(--line);margin-bottom:12px;
   box-shadow:0 20px 45px -22px rgba(0,0,0,.5);transition:transform .4s var(--ease),box-shadow .4s var(--ease);cursor:pointer}
-.case-shot .brw-body{flex:none;aspect-ratio:16/10}
+.case-shot .brw-body{flex:none;aspect-ratio:16/9}
 .case-shot:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(0,0,0,.62)}
 .case-shot:hover .brw-body img{transform:scale(1.045)}
 .case-video{width:100%;height:100%;object-fit:cover;display:block;background:#F1EFEA;cursor:pointer}
@@ -765,6 +782,7 @@ section,.strip{background:transparent!important}
       <div class="hero-cta">
         <a href="#audit" class="btn btn-p btn-lg">Перевірити свій сайт за 30 секунд <span class="arw">→</span></a>
         <a href="#works" class="btn btn-o btn-lg">Роботи</a>
+        <a href="#order" class="qp-link">Уже вирішили? Одразу до заявки <span class="arw">→</span></a>
       </div>
       <div class="hero-guar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -794,6 +812,7 @@ section,.strip{background:transparent!important}
       <div class="step-hd"><span class="step-no">01</span><span class="step-lb">Діагностика</span></div>
       <h2>Перевірте свій сайт за 30 секунд</h2>
       <p class="lede">Шість питань — і ви побачите, що конкретно втрачає ваш сайт прямо зараз. Я нічого не продаю на цьому кроці: ні заявки, ні пошти. Просто чесна оцінка.</p>
+      <p class="qp-link-row"><a href="#order" class="qp-link">Квіз необов'язковий — одразу до заявки <span class="arw">→</span></a></p>
     </div>
     <div class="aud rv" id="aud">
       <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="audg" x1="0" y1="0" x2="1" y2="1">
@@ -840,9 +859,11 @@ section,.strip{background:transparent!important}
       <div class="step-hd"><span class="step-no">02</span><span class="step-lb">Ціна бездіяльності</span></div>
       <h2>Скільки коштує сайт, який не продає</h2>
       <p class="lede">Поганий сайт не забирає гроші з рахунку — він просто не приносить тих, хто міг би прийти. Це непомітно, тому й терпиться роками. Порахуйте свою цифру.</p>
+      <p class="qp-link-row"><a href="#order" class="qp-link">Рахувати необов'язково — одразу до заявки <span class="arw">→</span></a></p>
     </div>
     <div class="loss rv">
       <div class="loss-in">
+        <p class="loss-hint">Цифра вже порахована на середніх показниках. Повзунки — лише щоб уточнити її під ваш бізнес.</p>
         <div class="fld"><label><span>Ваш середній чек</span><b id="vChk">25 000 ₴</b></label>
           <input type="range" id="rChk" min="3000" max="200000" step="1000" value="25000"></div>
         <div class="fld"><label><span>Відвідувачів на місяць</span><b id="vVis">400</b></label>
@@ -869,6 +890,7 @@ section,.strip{background:transparent!important}
       <div class="step-hd"><span class="step-no">03</span><span class="step-lb">У чому різниця</span></div>
       <h2>Один і той самий бізнес. Різниця — у структурі</h2>
       <p class="lede">Справа не в тому, що один сайт «гарніший». Ліворуч клієнт не розуміє, куди натиснути й чому саме вам. Праворуч — розуміє за три секунди. Потягніть роздільник.</p>
+      <p class="qp-link-row"><a href="#order" class="qp-link">Порівнювати необов'язково — одразу до заявки <span class="arw">→</span></a></p>
     </div>
     <div class="rv">
       <div class="ba" id="ba">
@@ -882,9 +904,14 @@ section,.strip{background:transparent!important}
         </div></div>
         <div class="ba-pane after" id="baAfter"><div class="brw">
           <div class="brw-bar"><span class="brw-dot"><i></i><i></i><i></i></span><span class="brw-url">kovaldental.com.ua</span></div>
-          <div class="brw-body"><img src="img/koval-site.jpg" width="1200" height="750" loading="lazy" alt="Головний екран живого сайту kovaldental.com.ua після редизайну — заголовок послуги, кнопка запису на консультацію та блок цифр досвіду клініки"></div>
+          <div class="brw-body"><img src="img/koval-site.jpg" width="1600" height="900" loading="lazy" alt="Головний екран живого сайту kovaldental.com.ua після редизайну — заголовок послуги, кнопка запису на консультацію та блок цифр досвіду клініки"></div>
         </div></div>
         <div class="ba-h" id="baH"><span class="ba-k"></span></div>
+      </div>
+      <div class="ba-toggle">
+        <span class="ba-toggle-lb">Або натисніть:</span>
+        <button type="button" class="ba-btn" data-p="4">Було</button>
+        <button type="button" class="ba-btn" data-p="96">Стало</button>
       </div>
       <div class="ba-legend">
         <div class="ba-lg l"><b>Що не так ліворуч</b><ul>
@@ -927,7 +954,7 @@ section,.strip{background:transparent!important}
         <div class="brw case-shot" id="kovalShot" data-href="https://kovaldental.com.ua" role="link" tabindex="0" aria-label="Відкрити живий сайт kovaldental.com.ua в новій вкладці">
           <div class="brw-bar"><span class="brw-dot"><i></i><i></i><i></i></span><span class="brw-url">kovaldental.com.ua</span></div>
           <div class="brw-body">
-            <video class="case-video" poster="img/koval-site.jpg" width="960" height="540" preload="none" muted playsinline loop controls aria-label="Відео-запис прокрутки живого сайту kovaldental.com.ua, 14 секунд">
+            <video class="case-video" poster="img/koval-site.jpg" width="1600" height="900" preload="none" muted playsinline loop controls aria-label="Відео-запис прокрутки живого сайту kovaldental.com.ua, 14 секунд">
               <source src="img/koval-tour-safe.mp4" type="video/mp4">
             </video>
             <span class="case-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="rgba(12,10,11,.55)" stroke="rgba(245,239,234,.4)"/><path d="M10 8.3l6.2 3.7-6.2 3.7z" fill="#F5EFEA"/></svg></span>
@@ -986,7 +1013,7 @@ section,.strip{background:transparent!important}
         <div class="ref">
           <span class="ref-badge">“</span>
           <div>
-            <div class="ref-q">Реальний відгук замовника з'явиться тут після дозволу на публікацію. Контакти тих, хто вже зі мною працював, даю на запит — просто напишіть.</div>
+            <div class="ref-q">Дозволу на цитату в Коваля я ще не просив — вигадувати чужі слова не буду. Замість цього вище: ім'я клініки, місто, цифри після запуску й посилання на живий сайт kovaldental.com.ua — перевірте самі. Контакти тих, хто вже зі мною працював, даю на запит — просто напишіть.</div>
             <div class="ref-a"><b>Рекомендації за запитом</b></div>
           </div>
         </div>
@@ -1413,10 +1440,19 @@ if(ba){
   ba.addEventListener('mousedown',function(e){drag=true;setP(e.clientX);e.preventDefault();});
   addEventListener('mousemove',function(e){if(drag)setP(e.clientX);});
   addEventListener('mouseup',function(){drag=false;});
-  ba.addEventListener('touchstart',function(e){drag=true;setP(e.touches[0].clientX);},{passive:true});
+  hnd.addEventListener('touchstart',function(e){drag=true;setP(e.touches[0].clientX);},{passive:true});
   ba.addEventListener('touchmove',function(e){if(drag){setP(e.touches[0].clientX);e.preventDefault();}},{passive:false});
   addEventListener('touchend',function(){drag=false;});
   ba.addEventListener('click',function(e){setP(e.clientX);});
+  var baBtns=document.querySelectorAll('.ba-btn');
+  baBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var p=parseFloat(btn.getAttribute('data-p'));
+      aft.style.clipPath='inset(0 0 0 '+p+'%)';hnd.style.left=p+'%';
+      baBtns.forEach(function(b){b.classList.remove('on');});
+      btn.classList.add('on');
+    });
+  });
 }
 
 /* ══════ МОДУЛЬ 4: ВІДЕО-ТУР КЕЙСУ КОВАЛЯ ══════ */
