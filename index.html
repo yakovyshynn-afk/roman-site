@@ -410,6 +410,37 @@ input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;bac
 .case-shot.played .case-play{opacity:0;transform:scale(.85)}
 .case-video-note{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
   color:var(--ink3);margin:0 0 20px}
+
+/* ═══ РЕЄСТР ПРОЄКТІВ ═══ */
+.preg{margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.preg-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 22px;margin-bottom:22px}
+.preg-note{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--ink3)}
+.preg-list{display:flex;flex-direction:column;gap:12px}
+.preg-item{display:grid;grid-template-columns:1fr;gap:10px;padding:20px 24px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(245,239,234,.07),rgba(245,239,234,.02));
+  backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);
+  border:1px solid rgba(245,239,234,.1);
+  box-shadow:inset 0 1px 0 rgba(245,239,234,.14),inset 0 0 0 1px rgba(245,239,234,.02),0 30px 60px -30px rgba(0,0,0,.75);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+a.preg-item{cursor:pointer}
+a.preg-item:hover{border-color:rgba(226,58,78,.35);transform:translateY(-2px)}
+@media(min-width:720px){.preg-item{grid-template-columns:1.4fr 1fr 1fr auto;align-items:center;gap:16px}}
+.preg-name{font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;color:var(--ink)}
+.preg-meta{font-size:13px;color:var(--ink2);margin-top:3px}
+.preg-status{display:flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.preg-status i{width:6px;height:6px;border-radius:50%;background:var(--good);flex-shrink:0}
+.preg-result{font-size:13.5px;color:var(--ink);font-weight:600}
+.preg-link{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--acc);display:inline-flex;
+  align-items:center;gap:6px;white-space:nowrap}
+@media(min-width:720px){.preg-link{justify-self:end}}
+a.preg-item:hover .preg-link{color:var(--acc2)}
+a.preg-item:hover .preg-link .arw{transform:translateX(4px)}
+.preg-item.ph{border-style:dashed;border-color:rgba(245,239,234,.14);background:transparent;
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:.6;justify-content:center;padding:18px 24px}
+.preg-ph-txt{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--ink3);
+  text-align:center;display:block}
+
 .gu{display:grid;grid-template-columns:1fr;gap:1px;background:var(--dline);border:1px solid var(--dline);border-radius:20px;overflow:hidden}
 @media(min-width:760px){.gu{grid-template-columns:1fr 1fr}}
 .gu-i{background:var(--dark);padding:30px 28px}
@@ -984,6 +1015,28 @@ section,.strip{background:transparent!important}
         <h3>Як має виглядати сайт підрядника, якому довіряють $150 000</h3>
         <p><b>Навіщо:</b> у преміальному будівництві всі сайти однакові — галерея фото й форма заявки. Але клієнт вирішує не за фото, а за відповіддю на «чи не кинуть мене на пів дороги».</p>
         <p><b>Що показую:</b> калькулятор вартості будинку, онлайн-щоденник об'єкта з фото по датах, прозорий кошторис — структуру, яка знімає страх до першого дзвінка.</p>
+      </div>
+    </div>
+
+    <!-- ═══ РЕЄСТР ПРОЄКТІВ ═══ -->
+    <div class="preg rv">
+      <div class="preg-top">
+        <h3>Проєкти</h3>
+        <span class="preg-note">Список поповнюється по мірі здачі нових сайтів</span>
+      </div>
+      <div class="preg-list">
+        <a class="preg-item" href="https://kovaldental.com.ua" target="_blank" rel="noopener" aria-label="Відкрити живий сайт kovaldental.com.ua в новій вкладці">
+          <div>
+            <div class="preg-name">Стоматологія Коваля</div>
+            <div class="preg-meta">Стоматологія · Кам'янець-Подільський</div>
+          </div>
+          <div class="preg-status"><i></i>Здано · липень 2026</div>
+          <div class="preg-result">20 заявок за 24 дні</div>
+          <span class="preg-link">kovaldental.com.ua <span class="arw">→</span></span>
+        </a>
+        <div class="preg-item ph">
+          <span class="preg-ph-txt">Наступний проєкт — скоро</span>
+        </div>
       </div>
     </div>
   </div>
